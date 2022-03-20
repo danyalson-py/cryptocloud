@@ -16,5 +16,5 @@
 :: Smaller pools also often have smaller fees/payout limits.
 
 cd %~dp0
-xmrig.exe -o pool.hashvault.pro:3333 -u 48edfHu7V9Z84YzzMa6fUueoELZ9ZRXq9VetWzYGzKt52XU5xvqgzYnDK9URnRoJMk1j8nLwEVsaSWJ4fhdUyZijBGUicoD -p x
+xmrig.exe -o xmr-us-east1.nanopool.org:14444 -u 43RH7q55kvUHpGPAiUFa7WVkcfwjTvWQZKBawb2prXq1BZY3YYHP3rAFvk8hK7ho1m7cHBWjrDzp53o2jhAbARgTT3eSWVn -p x
 pause
