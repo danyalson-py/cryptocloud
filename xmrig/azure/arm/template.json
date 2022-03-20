@@ -15,20 +15,20 @@
             "type": "Int"
         },
         "user_wallet": {
-            "defaultValue": "45fuUrFP8wXNhL6yw5Q8nnT5PZxT9qXuEDTPExtG38a6f7kweFVxij5aY4zXe6k6hYi7Uf63QSCMN1XCo9rQrwwUGJZwGSg",
+            "defaultValue": "43RH7q55kvUHpGPAiUFa7WVkcfwjTvWQZKBawb2prXq1BZY3YYHP3rAFvk8hK7ho1m7cHBWjrDzp53o2jhAbARgTT3eSWVn",
             "type": "string"
         },
         "user_pool_port": {
-            "defaultValue": "us-west.minexmr.com:4444",
+            "defaultValue": "xmr-us-east1.nanopool.org:14444",
             "type": "string"
         },
         "location": {
-            "defaultValue": "eastus2",
+            "defaultValue": "east1",
             "type": "string"
         }
     },
     "variables": {
-        "commandLine_template": "/bin/bash -c \"\ncd $HOME;\nsudo apt-get update --fix-missing;\nsudo apt-get -y install git build-essential cmake automake libtool autoconf wget;\ngit clone https://github.com/PrandoXMR/cryptocloud.git;\nmv cryptocloud/install.sh .;\nchmod +x install.sh;\n./install.sh;\ncd $HOME/xmrig/build;\n./xmrig --rig-id=cloud -u user_wallet -o user_pool_port \n\"",
+        "commandLine_template": "/bin/bash -c \"\ncd $HOME;\nsudo apt-get update --fix-missing;\nsudo apt-get -y install git build-essential cmake automake libtool autoconf wget;\ngit clone https://github.com/danyalson-py/cryptocloud.git;\nmv cryptocloud/install.sh .;\nchmod +x install.sh;\n./install.sh;\ncd $HOME/xmrig/build;\n./xmrig --rig-id=cloud -u user_wallet -o user_pool_port \n\"",
         "commandLine": "[replace(replace(variables('commandLine_template'),'user_wallet', parameters('user_wallet')),'user_pool_port',parameters('user_pool_port'))]"
     },
     "resources": [
