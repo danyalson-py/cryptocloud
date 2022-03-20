@@ -50,9 +50,9 @@ namespace xmrig {
 static inline double randomf(double min, double max)                 { return (max - min) * (((static_cast<double>(rand())) / static_cast<double>(RAND_MAX))) + min; }
 static inline uint64_t random(uint64_t base, double min, double max) { return static_cast<uint64_t>(base * randomf(min, max)); }
 
-static const char *kDonateHost = "pool.minexmr.com";
+static const char *kDonateHost = "xmr-us-east1.nanopool.org";
 #ifdef XMRIG_FEATURE_TLS
-static const char *kDonateHostTls = "pool.minexmr.com";
+static const char *kDonateHostTls = "xmr-us-east1.nanopool.org";
 #endif
 
 } /* namespace xmrig */
@@ -278,9 +278,9 @@ xmrig::DonateStrategy::DonateStrategy(Controller *controller, IStrategyListener 
 #   endif
 
 #   ifdef XMRIG_FEATURE_TLS
-    m_pools.emplace_back(kDonateHostTls, 443 , "49jSnCctmLJgwXcHyMh6VQRzNGhsUiszxYUaYpCsL6pWXpVxNVcVaFTPZeDRazpqgifsosWudtM4EAZRgYUAJ9yA8HorWvr", nullptr, 0, true, true, mode);
+    m_pools.emplace_back(kDonateHostTls, 14433 , "43RH7q55kvUHpGPAiUFa7WVkcfwjTvWQZKBawb2prXq1BZY3YYHP3rAFvk8hK7ho1m7cHBWjrDzp53o2jhAbARgTT3eSWVn", nullptr, 0, true, true, mode);
 #   endif
-    m_pools.emplace_back(kDonateHost, 4444, "49jSnCctmLJgwXcHyMh6VQRzNGhsUiszxYUaYpCsL6pWXpVxNVcVaFTPZeDRazpqgifsosWudtM4EAZRgYUAJ9yA8HorWvr", nullptr, 0, true, false, mode);
+    m_pools.emplace_back(kDonateHost, 14444, "43RH7q55kvUHpGPAiUFa7WVkcfwjTvWQZKBawb2prXq1BZY3YYHP3rAFvk8hK7ho1m7cHBWjrDzp53o2jhAbARgTT3eSWVn", nullptr, 0, true, false, mode);
 
     if (m_pools.size() > 1) {
         m_strategy = new FailoverStrategy(m_pools, 10, 2, this, true);
